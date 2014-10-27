@@ -148,9 +148,21 @@ client.unpublish("dir1/file1")
 from webdav.client import WebDavException
 try:
     ...
-except WebDavException as e:
-    loggin_except(e)
+except WebDavException as exception:
+    ...
 ```
+
+Получение недостающих файлов
+```python
+client.pull(remote_directory='dir1', local_directory='~/Documents/dir1')
+```
+
+Отправка недостающих файлов
+```python
+client.push(remote_directory='dir1', local_directory='~/Documents/dir1')
+```
+
+
 
 **Асинхронные методы**
 
